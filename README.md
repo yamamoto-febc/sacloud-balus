@@ -1,13 +1,24 @@
 # sacloud-balus
 
-[滅びの呪文](https://ja.wikipedia.org/wiki/飛行石#.E3.81.8A.E3.81.BE.E3.81.98.E3.81.AA.E3.81.84)をさくらのクラウド上で実装するためのソフトウェアパーツ
+[バルス](https://ja.wikipedia.org/wiki/飛行石#.E3.81.8A.E3.81.BE.E3.81.98.E3.81.AA.E3.81.84)をさくらのクラウド上で実装するためのソフトウェアパーツ
 
-**This project is still developping.**
-s
+## 概要
+
+このプロジェクトは、さくらのクラウド上に「バルス」を実装するためのソフトウェアパーツです。
+
+以下のように動作します。
+
+  - 1) [さくらのIoT Platform](https://iot.sakura.ad.jp)からOutgoing Webhookで指示をもらう
+  - 2) [sacloud-delete-all](https://github.com/yamamoto-febc/sacloud-delete-all)にてクラウド上のリソースを全削除
+  - 3) 削除結果(正常終了/異常終了)をさくらのIoT Platformを利用して通知(Incoming Webhook)
+
+IoT Platformに繋ぐためのArduino用プロジェクトは以下のリポジトリです。
+
+[sakura_morse_balus](https://github.com/yamamoto-febc/sakura_morse_balus)
 
 ## License
 
- `sakura-iot-go` Copyright (C) 2016 Kazumichi Yamamoto.
+ `sacloud-balus` Copyright (C) 2016 Kazumichi Yamamoto.
 
   This project is published under [Apache 2.0 License](LICENSE.txt).
   
