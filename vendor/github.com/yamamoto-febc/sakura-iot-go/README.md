@@ -2,7 +2,10 @@
 
 [さくらのIoT Platform](https://iot.sakura.ad.jp)との連携サービス用ライブラリ
 
-**This project is still developping.**
+**This project is still developing.**
+
+[![GoDoc](https://godoc.org/github.com/sacloud/libsacloud?status.svg)](https://godoc.org/github.com/yamamoto-febc/sakura-iot-go)
+[![Go Report Card](https://goreportcard.com/badge/github.com/sacloud/libsacloud)](https://goreportcard.com/report/github.com/yamamoto-febc/sakura-iot-go)
 
 
 ## 概要
@@ -78,13 +81,13 @@ func main() {
 	// create Payload
 	p := sakura.NewPayload(module)
 
-	p.AddChannelByInt(0, int32(1))                 // ch:0 , set value(int32)
-	p.AddChannelByUint(1, uint32(1))               // ch:1 , set value(uint32)
-	p.AddChannelByInt64(2, int64(1))               // ch:2 , set value(int64)
-	p.AddChannelByUint64(3, uint64(1))             // ch:3 , set value(uint64)
-	p.AddChannelByFloat(4, float32(1))             // ch:4 , set value(float)
-	p.AddChannelByDouble(5, float64(1))            // ch:5 , set value(double)
-	p.AddChannelByHexString(6, "0f1e2d3c4b5c6b7a") // ch:6 , set value(HexString)
+	p.AddValueByInt(0, int32(1))                 // ch:0 , set value(int32)
+	p.AddValueByUint(1, uint32(1))               // ch:1 , set value(uint32)
+	p.AddValueByInt64(2, int64(1))               // ch:2 , set value(int64)
+	p.AddValueByUint64(3, uint64(1))             // ch:3 , set value(uint64)
+	p.AddValueByFloat(4, float32(1))             // ch:4 , set value(float)
+	p.AddValueByDouble(5, float64(1))            // ch:5 , set value(double)
+	p.AddValueByHexString(6, "0f1e2d3c4b5c6b7a") // ch:6 , set value(HexString)
 
 	err := sender.Send(p)
 	if err != nil {

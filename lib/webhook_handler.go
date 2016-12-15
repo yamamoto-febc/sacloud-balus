@@ -59,7 +59,7 @@ func (w *WebhookHandler) HandleRequest(p sakura.Payload) {
 		if !res {
 			v = SAKURA_IOT_EXIT_ERROR_CODE
 		}
-		p.AddChannelByInt(SAKURA_IOT_CHANNEL, int32(v))
+		p.AddValueByInt(SAKURA_IOT_CHANNEL, int32(v))
 
 		// 送信
 		err = sender.Send(p)
